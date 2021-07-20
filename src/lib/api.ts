@@ -42,7 +42,7 @@ class API {
    * @return {WebSocket}
    */
   websocket = (path: string) => {
-    document.cookie = `token=${auth.getToken()};max-age=${60 * 60 * 24};path=/;samesite=Strict`;
+    document.cookie = `token=${auth.tokenValue};max-age=${60 * 60 * 24};path=/;samesite=Strict`;
 
     return new WebSocket(`${getWebsocketUrl()}/ws/${path}/`);
   }
